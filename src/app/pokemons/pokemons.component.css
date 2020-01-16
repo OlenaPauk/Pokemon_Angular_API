@@ -7,3 +7,33 @@
     padding: 0 auto;
     text-align: center;
 }
+.containerList{
+    width: 45%;
+    min-height: 400px;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.pokemonPoster {
+    min-width: 180px;
+    height: 300px;
+    border: 2px solid black;
+    margin-bottom: 15px;
+}
+.pokemonName {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.pokemonName::first-letter {
+    text-transform: uppercase;
+}
+.selectPokemon {
+    margin: 10px 58px;
+}
+
+select {
+    width: 14.5%;
+    text-transform: capitalize;
+}

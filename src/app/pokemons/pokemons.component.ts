@@ -10,23 +10,34 @@ import { GetPokemonsResults } from '../getPokemonsResults';
 })
 export class PokemonsComponent implements OnInit {
   pokemonsList;
+  pokemonsType;
   showList: boolean = false;
-  // isLoading: boolean = false;
+
   constructor(private pokeService: PokeServiceService) { }
 
   ngOnInit() {
     this.pokemonsList = this.pokeService.getPokeList()
-    .subscribe(
+      .subscribe(
         data => {
           this.pokemonsList = (<GetPokemonsResults>data).results;
-          this.showList = true
+          this.showList = true;
+          console.log(data);
         },
         error => console.log(error)
       );
-    
+    this.pokemonsType = this.pokeService.getPokeType()
+    .subscribe(
+      data => {
+        this.pokemonsType = (<GetPokemonsResults>data).results;
+        this.showList = true;
+        console.log(data);
+      },
+      error => console.log(error)
+    );
+
     // this.loadMore();
   }
-  
+
   // loadMore() {
   //   this.isLoading = true;
   //   this.pokeService.getPokemonList(this.pokemonsList.length, 12)

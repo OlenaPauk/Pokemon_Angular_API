@@ -1,14 +1,18 @@
-<div class="header">Pokedex</div>
-<!-- <p *ngFor="let item of pokemonsList | async"></p> -->
-<div>
+<div  *ngIf="showList">
+  <div class="header">Pokedex</div>
+  <div class="selectPokemon">
+    <select name="" id="typesSelect">
+      <option value="all">Select All</option>
+      <option *ngFor="let type of pokemonsType" value="{{type.name}}">{{type.name}}</option>
+    </select>
+  </div>
+  <div class="containerList">
 
-  <div class="row" *ngIf="showList">
-    <div class="col-sm-4" *ngFor="let poke of pokemonsList">
-      <div class="card">
-        <div class="card-body">
-          <a>{{poke.name}}</a>
-        </div>
-      </div>
+    <div class="pokemonPoster" *ngFor="let poke of pokemonsList">
+
+      <p class="pokemonName">{{poke.name}}</p>
     </div>
+
+
   </div>
 </div>

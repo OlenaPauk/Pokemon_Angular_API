@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokeServiceService {
-  pokeUrl: string = '';
+  private pokeUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
   
 
   constructor(private http: HttpClient) { }
 
-  getPokeList(){
-    return this.http.get('https://pokeapi.co/api/v2/pokemon');
+  getPokeList(limit:number,offset:number){
+    return this.http.get(`${this.pokeUrl}?limit=${limit}&offset=${offset}`);
 
       // .map(response => response.json().items) 
       // .subscribe(
@@ -23,6 +23,9 @@ export class PokeServiceService {
 
     // return this.http.get(`${this.pokeUrl}?limit=${limit}?offset=${offset}`)
     // return this.http.get('https://pokeapi.co/api/v2/pokemon')
+  }
+  getPokeType(){
+    return this.http.get('https://pokeapi.co/api/v2/type/?limit=999');
   }
 
 
