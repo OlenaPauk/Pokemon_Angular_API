@@ -1,0 +1,14 @@
+<div class="header">Pokedex</div>
+<!-- <p *ngFor="let item of pokemonsList | async"></p> -->
+<div>
+
+  <div class="row" *ngIf="showList">
+    <div class="col-sm-4" *ngFor="let poke of pokemonsList">
+      <div class="card">
+        <div class="card-body">
+          <a>{{poke.name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
