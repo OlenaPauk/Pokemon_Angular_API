@@ -1,5 +1,9 @@
 <div class="header">Pokedex</div>
 <div *ngIf="pokemonsList">
+    <select name="" id="">
+        <option value="all">Select all</option>
+        <option *ngFor="let type of pokemonTypesList" value="{{type.name}}">{{type.name}}</option>
+    </select>
     <div id="pokemonContainer">
         <div class="pokemonPoster" *ngFor="let poke of pokemonsList">
             <p>{{poke.name}}</p>

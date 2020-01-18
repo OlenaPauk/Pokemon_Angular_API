@@ -13,7 +13,7 @@ export class PokemonsService {
   getPokeList(page: number): Observable<IPokeList> {
     let offset = page === 0 ? 1 : page * 12;
     return this.http
-      .get<IPokeList>(`http://pokeapi.co/api/v2/pokemon?limit=12&offset=${offset}`)
+      .get<IPokeList>(`https://pokeapi.co/api/v2/pokemon?limit=12&offset=${offset}`)
       .pipe();
   }
 
@@ -25,7 +25,16 @@ export class PokemonsService {
 
   getPokeTypes(): Observable<IPokeList> {    
     return this.http
-      .get<IPokeList>('http://pokeapi.co/api/v1/type/')
+      .get<IPokeList>('https://pokeapi.co/api/v2/type/')
       .pipe();
+  }
+
+  getPokeImageUrl(pokeId: number): string{
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokeId}.png`
+  }
+
+  extractPokeId(pokeUrl: string): number{
+    let temp = pokeUrl.split('/');
+    return +temp[temp.length - 2];
   }
 }

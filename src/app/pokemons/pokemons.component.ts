@@ -11,12 +11,10 @@ import { IPokeDetails } from '../shared/interfaces/pokeDetails.interface';
 })
 export class PokemonsComponent implements OnInit {
   private pokemonsDetailsList: IPokeDetails[] = [];
+  private pagesCount = 0;
 
-  public pokemonsList: IPokeItem[] = [];
-  public pagesCount = 0;
-  
+  public pokemonsList: IPokeItem[] = [];  
   public pokemonTypesList: IPokeItem[] = [];
-
   public pokemonDetails: IPokeDetails;
     
   constructor(private pokeService: PokemonsService) { }
@@ -38,8 +36,18 @@ export class PokemonsComponent implements OnInit {
 
   private LoadPokeList(page: number): void {
     this.pokeService.getPokeList(page)
-      .subscribe((poke: IPokeList) => this.pokemonsList.push(...poke.results));    
+      .subscribe((poke: IPokeList) => {
+        // update poke id
+        poke.results.forEach(p => {
+          p.id = this.pokeService.extractPokeId(p.url);
+          p.imgUrl = this.pokeService.getPokeImageUrl(p.id);
+        });
+
+        // extend existing poke list with new pokemons
+        this.pokemonsList.push(...poke.results);
+      });    
   }
+
   private LoadPokeDetails(pokeId: number) {
     let pokemon = this.pokemonsDetailsList.find(p => p.id);
     if(!pokemon){
@@ -53,5 +61,4 @@ export class PokemonsComponent implements OnInit {
       this.pokemonDetails = pokemon;
     }
   }
-
 }
