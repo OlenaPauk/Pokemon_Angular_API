@@ -11,7 +11,7 @@ export class PokemonsService {
   constructor(private http: HttpClient) { }
 
   getPokeList(page: number): Observable<IPokeList> {
-    let offset = page === 0 ? 1 : page * 12;
+    let offset =  page * 12;
     return this.http
       .get<IPokeList>(`https://pokeapi.co/api/v2/pokemon?limit=12&offset=${offset}`)
       .pipe();

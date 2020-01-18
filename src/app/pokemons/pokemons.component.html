@@ -7,6 +7,9 @@
     <div id="pokemonContainer">
         <div class="pokemonPoster" *ngFor="let poke of pokemonsList">
             <p>{{poke.name}}</p>
+            <p>{{poke.id}}</p>
+            <!-- <p>{{poke.imgUrl}}</p> -->
+            <img src="{{poke.imgUrl}}" alt="">
         </div>
     </div>
 
