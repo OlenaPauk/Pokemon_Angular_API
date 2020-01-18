@@ -1,0 +1,10 @@
+<div class="header">Pokedex</div>
+<div *ngIf="pokemonsList">
+    <div id="pokemonContainer">
+        <div class="pokemonPoster" *ngFor="let poke of pokemonsList">
+            <p>{{poke.name}}</p>
+        </div>
+    </div>
+
+</div>
+<button (click)="morePokemons()">MOREEEEE</button>
