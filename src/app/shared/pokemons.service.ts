@@ -17,9 +17,9 @@ export class PokemonsService {
       .pipe();
   }
 
-  getPokeDetails(pokeId: number): Observable<IPokeDetails> {
+  getPokeDetails(pokeUrl: string): Observable<IPokeDetails> {
     return this.http
-      .get<IPokeDetails>(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+      .get<IPokeDetails>(pokeUrl)
       .pipe();
   }
 
@@ -27,14 +27,5 @@ export class PokemonsService {
     return this.http
       .get<IPokeList>('https://pokeapi.co/api/v2/type/')
       .pipe();
-  }
-
-  getPokeImageUrl(pokeId: number): string{
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokeId}.png`
-  }
-
-  extractPokeId(pokeUrl: string): number{
-    let temp = pokeUrl.split('/');
-    return +temp[temp.length - 2];
   }
 }

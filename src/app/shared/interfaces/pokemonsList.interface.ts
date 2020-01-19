@@ -1,6 +1,6 @@
-import { IPokeItem } from './pokeItem.interface';
+import { IPokeDetails } from './pokeDetails.interface';
 
 export interface IPokeList {
     count: number;
-    results: IPokeItem[];
+    results: IPokeDetails[];
 }
