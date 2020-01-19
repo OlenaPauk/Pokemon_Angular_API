@@ -31,7 +31,6 @@ export class PokemonsComponent implements OnInit {
   }
 
   filterPokeType(e){
-    this.pokeFilter = e.target.value;
     this.pokemonDetails = null;
   }
 
@@ -52,6 +51,7 @@ export class PokemonsComponent implements OnInit {
           this.pokeService.getPokeDetails(p.url)
             .subscribe((pokeDetails: IPokeDetails) =>{
               this.pokemonsList.push(pokeDetails);
+              this.pokemonsList.sort((u,v)=> u.id-v.id);
               this.pokeFilter = '';
             })  
         );
