@@ -1,16 +1,16 @@
 <div class="header">Pokedex</div>
 <div *ngIf="pokemonsList">
-    <select name="" id="">
+    <select class="selectPokemon">
         <option value="all">Select all</option>
         <option *ngFor="let type of pokemonTypesList" value="{{type.name}}">{{type.name}}</option>
     </select>
     <div class="pokemonContainer">
         <div class="pokemonPoster" *ngFor="let poke of pokemonsList" (click)="pokeDetails(poke.id)">
-            <p>{{poke.name}}</p>
-            <p>{{poke.id}}</p>
-
-            <img src="{{poke.sprites.front_shiny}}" alt="">
-            <p *ngFor="let item of poke.types" class="{{item.type.name}}">{{item.type.name}}</p>
+            <img src="{{poke.sprites.front_shiny}}" class="image">
+            <p class="pokemonName">{{poke.name}}</p>
+            <div class="types">
+                <div *ngFor="let item of poke.types" class="{{item.type.name}}Type type">{{item.type.name}}</div>
+            </div>
         </div>
     </div>
     <div class="pokeDetails" *ngIf="pokemonDetails">
@@ -61,4 +61,4 @@
 
     </div>
 
-    <button (click)="morePokemons()">MOREEEEE</button>
+    <button (click)="morePokemons()" class="more">Load More</button>
