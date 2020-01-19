@@ -7,7 +7,7 @@
     padding: 0 auto;
     text-align: center;
 }
-#pokemonContainer {
+.pokemonContainer {
     width: 45%;
     min-height: 400px;
     margin-left: 50px;

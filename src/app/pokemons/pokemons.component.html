@@ -4,16 +4,61 @@
         <option value="all">Select all</option>
         <option *ngFor="let type of pokemonTypesList" value="{{type.name}}">{{type.name}}</option>
     </select>
-    <div id="pokemonContainer">
-        <div class="pokemonPoster" *ngFor="let poke of pokemonsList">
+    <div class="pokemonContainer">
+        <div class="pokemonPoster" *ngFor="let poke of pokemonsList" (click)="pokeDetails(poke.id)">
             <p>{{poke.name}}</p>
             <p>{{poke.id}}</p>
-            
+
             <img src="{{poke.sprites.front_shiny}}" alt="">
             <p *ngFor="let item of poke.types" class="{{item.type.name}}">{{item.type.name}}</p>
         </div>
     </div>
+    <div class="pokeDetails" *ngIf="pokemonDetails">
+        <div class="detailsSkillsPoke">
+            <div><img [src]="pokemonDetails.sprites.front_shiny" class="imageDetails"></div>
+            <div>
+                <p class="detailsName">{{pokemonDetails.name}} #{{pokemonDetails.id}}</p>
+            </div>
+            <table>
+                <tr>
+                    <td>{{pokemonDetails.types.length == 1 ? 'Type' : 'Types'}}</td>
+                    <td>{{pokeService.joinPokeTypesNames(pokemonDetails)}}</td>
+                </tr>
+                <tr>
+                    <td>Attack</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'attack')}}</td>
+                </tr>
+                <tr>
+                    <td>Defense</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'defense')}}</td>
+                </tr>
+                <tr>
+                    <td>HP</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'hp')}}</td>
+                </tr>
+                <tr>
+                    <td>SP Attack</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'special-attack')}}</td>
+                </tr>
+                <tr>
+                    <td>SP Defense</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'special-defense')}}</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'speed')}}</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>{{pokemonDetails.weight}}</td>
+                </tr>
+                <tr>
+                    <td>Total moves</td>
+                    <td>{{pokemonDetails.moves.length}}</td>
+                </tr>
+            </table>
+        </div>
 
-</div>
+    </div>
 
-<button (click)="morePokemons()">MOREEEEE</button>
+    <button (click)="morePokemons()">MOREEEEE</button>

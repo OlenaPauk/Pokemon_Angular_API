@@ -29,6 +29,10 @@ export class PokemonsComponent implements OnInit {
     this.LoadPokeList(this.pagesCount);    
   }
 
+  pokeDetails(pokeId: number): void{
+    this.pokemonDetails = this.pokemonsList.find(item => item.id === pokeId);
+  }
+
   private getPokeTypes(): void {
     this.pokeService.getPokeTypes()
       .subscribe((poke: IPokeList) => this.pokemonTypesList.push(...poke.results));    
@@ -40,9 +44,8 @@ export class PokemonsComponent implements OnInit {
         poke.results.forEach(p => 
           // load Poke Details for each Pokemon
           this.pokeService.getPokeDetails(p.url)
-            .subscribe((pokeDetails: IPokeDetails) =>              
-              this.pokemonsList.push(pokeDetails)        
-          )  
+            .subscribe((pokeDetails: IPokeDetails) =>             
+              this.pokemonsList.push(pokeDetails))  
         );
       });    
   } 

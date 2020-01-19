@@ -28,4 +28,16 @@ export class PokemonsService {
       .get<IPokeList>('https://pokeapi.co/api/v2/type/')
       .pipe();
   }
+
+  joinPokeTypesNames(pokeDetails: IPokeDetails): string{
+    let result = [];
+    pokeDetails.types.forEach(item => {
+      result.push(item.type.name)
+    });
+    return result.join(',');
+  }
+
+  selectPokeStat(pokeDetails: IPokeDetails, name: string): number{    
+    return pokeDetails.stats.find(item => item.stat.name === name).base_stat;
+  }
 }

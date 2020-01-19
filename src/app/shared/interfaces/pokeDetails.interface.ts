@@ -6,6 +6,7 @@ export interface IPokeDetails {
     types: IPokeTypeSlot[];
     stats: IPokeBaseStat[];
     moves: IPokeMove[];
+    weight: number;
 }
 export interface IPokeTypeSlot{
    type: IPokeType
