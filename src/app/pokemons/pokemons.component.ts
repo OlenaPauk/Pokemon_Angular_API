@@ -15,18 +15,23 @@ export class PokemonsComponent implements OnInit {
   public pokemonsList: IPokeDetails[] = [];  
   public pokemonTypesList: IPokeTypeItem[] = [];
   public pokemonDetails: IPokeDetails;
+
+  public pokeFilter: string = '';
     
   constructor(private pokeService: PokemonsService) { }
 
   ngOnInit() {
     this.LoadPokeList(0); 
-    this.getPokeTypes();
- 
+    this.getPokeTypes();   
   }
 
   morePokemons(): void {
     this.pagesCount++;
     this.LoadPokeList(this.pagesCount);    
+  }
+
+  showTypePoke(e){
+    this.pokeFilter = e.target.value;
   }
 
   pokeDetails(pokeId: number): void{
@@ -44,8 +49,10 @@ export class PokemonsComponent implements OnInit {
         poke.results.forEach(p => 
           // load Poke Details for each Pokemon
           this.pokeService.getPokeDetails(p.url)
-            .subscribe((pokeDetails: IPokeDetails) =>             
-              this.pokemonsList.push(pokeDetails))  
+            .subscribe((pokeDetails: IPokeDetails) =>{
+              this.pokemonsList.push(pokeDetails);
+              this.pokeFilter = '';
+            })  
         );
       });    
   } 
