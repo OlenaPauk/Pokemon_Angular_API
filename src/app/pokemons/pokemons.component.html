@@ -1,6 +1,6 @@
 <div class="header">Pokedex</div>
 <div *ngIf="pokemonsList">
-    <select class="selectPokemon" (change)="showTypePoke($event)">
+    <select class="selectPokemon" (change)="filterPokeType($event)">
         <option value="">Select all</option>
         <option *ngFor="let type of pokemonTypesList" value="{{type.name}}">{{type.name}}</option>
     </select>

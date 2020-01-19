@@ -30,8 +30,9 @@ export class PokemonsComponent implements OnInit {
     this.LoadPokeList(this.pagesCount);    
   }
 
-  showTypePoke(e){
+  filterPokeType(e){
     this.pokeFilter = e.target.value;
+    this.pokemonDetails = null;
   }
 
   pokeDetails(pokeId: number): void{
