@@ -22,7 +22,7 @@ export class PokemonsComponent implements OnInit {
   public topPosToStartShowing:number = 100;
   public scrollPosition: number;
 
-  constructor(private pokeService: PokemonsService) { }
+  constructor(public pokeService: PokemonsService) { }
 
   ngOnInit() {
     this.LoadPokeList(0);
