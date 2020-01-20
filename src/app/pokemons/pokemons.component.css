@@ -22,12 +22,13 @@
     height: 300px;
     border: 2px solid black;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .image {
     width: 80%;
     height: 50%;
-    margin: 5px 10%;
+    margin: 10px 10%;
 }
 
 .pokemonName {
@@ -43,20 +44,19 @@
     border-radius: 5px;
     text-transform: capitalize;
     margin-left: 6px;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    text-align: center;
 }
-.types{
+
+.types {
     margin-top: 10px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-
 }
 
 .normalType {
     background-color: #A8A878;
+    text-align: center;
 }
 
 .fireType {
@@ -171,6 +171,7 @@ td {
     font-size: 22px;
     margin-top: -10px;
 }
+
 .more {
     width: 44%;
     height: 50px;
@@ -181,11 +182,62 @@ td {
     color: white;
     font-size: 25px;
 }
+
 .selectPokemon {
     margin: 10px 58px;
 }
 
 select {
-    width: 14.5%;
+    width: 184px;
     text-transform: capitalize;
+    cursor: pointer;
+}
+
+.topButton {
+    width: 40px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+.downButton {
+    width: 40px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width:1024px) {
+    .pokeDetails {
+        position: relative;
+        top: 25%;
+        left: 1%;
+        margin: 50px auto;
+    }
+    select {
+        width: 80px;
+    }
+    .selectPokemon {
+        margin: 10px 42%;
+    }
+    .pokemonContainer {
+        margin: 50px auto;
+    }
+    .more {
+        margin: 2% 28%;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .more {
+        margin: 2% 28%;
+    }
+    .selectPokemon {
+        margin: 10px 40%;
+    }
+    .pokeDetails {
+        height: 525px;
+    }
 }

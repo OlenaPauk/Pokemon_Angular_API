@@ -1,21 +1,22 @@
 <div class="header">Pokedex</div>
 <div *ngIf="pokemonsList">
-    
+
     <select class="selectPokemon" (change)="filterPokeType($event)" [(ngModel)]="pokeFilter">
-        <option value="" >Select all</option>
+        <option value="">Select all</option>
         <option *ngFor="let type of pokemonTypesList" value="{{type.name}}">{{type.name}}</option>
     </select>
 
     <div class="pokemonContainer">
-        <div class="pokemonPoster" *ngFor="let poke of pokemonsList | pokeFilter:pokeFilter" (click)="pokeDetails(poke.id)">
+        <div class="pokemonPoster" *ngFor="let poke of pokemonsList | pokeFilter:pokeFilter"
+            (click)="pokeDetails(poke.id)">
             <img src="{{poke.sprites.front_shiny}}" class="image">
-            <p class="pokemonName">{{poke.name}}</p>
+            <div class="pokemonName">{{poke.name}}</div>
             <div class="types">
                 <div *ngFor="let item of poke.types" class="{{item.type.name}}Type type">{{item.type.name}}</div>
             </div>
         </div>
     </div>
-
+    <button (click)="morePokemons()" class="more" #buttonMore>Load More</button>
     <div class="pokeDetails" *ngIf="pokemonDetails">
         <div class="detailsSkillsPoke">
             <div><img [src]="pokemonDetails.sprites.front_shiny" class="imageDetails"></div>
@@ -63,5 +64,6 @@
         </div>
 
     </div>
-
-    <button (click)="morePokemons()" class="more">Load More</button>
+    <img src="https://cdn1.iconfinder.com/data/icons/media-icons-23/100/top-512.png"  (click)="gotoDown()" class="downButton">
+    <img src="https://cdn1.iconfinder.com/data/icons/media-icons-23/100/top-512.png" *ngIf="isShowT" (click)="gotoTop()" class="topButton">
+    
