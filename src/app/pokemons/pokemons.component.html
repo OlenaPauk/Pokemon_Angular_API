@@ -26,31 +26,31 @@
             <table>
                 <tr>
                     <td>{{pokemonDetails.types.length == 1 ? 'Type' : 'Types'}}</td>
-                    <td>{{pokeService.joinPokeTypesNames(pokemonDetails)}}</td>
+                    <td>{{joinPokeTypesNames(pokemonDetails)}}</td>
                 </tr>
                 <tr>
                     <td>Attack</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'attack')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'attack')}}</td>
                 </tr>
                 <tr>
                     <td>Defense</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'defense')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'defense')}}</td>
                 </tr>
                 <tr>
                     <td>HP</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'hp')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'hp')}}</td>
                 </tr>
                 <tr>
                     <td>SP Attack</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'special-attack')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'special-attack')}}</td>
                 </tr>
                 <tr>
                     <td>SP Defense</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'special-defense')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'special-defense')}}</td>
                 </tr>
                 <tr>
                     <td>Speed</td>
-                    <td>{{pokeService.selectPokeStat(pokemonDetails, 'speed')}}</td>
+                    <td>{{selectPokeStat(pokemonDetails, 'speed')}}</td>
                 </tr>
                 <tr>
                     <td>Weight</td>

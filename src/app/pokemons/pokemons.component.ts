@@ -67,6 +67,14 @@ export class PokemonsComponent implements OnInit {
     this.pokemonDetails = this.pokemonsList.find(item => item.id === pokeId);
   }
 
+  joinPokeTypesNames(pokeDetails: IPokeDetails): string{
+    return this.pokeService.joinPokeTypesNames(pokeDetails);
+  }
+
+  selectPokeStat(pokeDetails: IPokeDetails, name: string): number{ 
+    return this.pokeService.selectPokeStat(pokeDetails, name);
+  }
+  
   private getPokeTypes(): void {
     this.pokeService.getPokeTypes()
       .subscribe((poke: IPokeList) => this.pokemonTypesList.push(...poke.results));
