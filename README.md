@@ -1,27 +1,38 @@
-# PokeApi
+# Poke wiki
+On this page You can find information about all Pokémons.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Poke API [link](https://pokeapi.co/docs/v2.html) provides simple API for pokemons seach, pokemons info, etc.
 
-## Development server
+# Application description 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
++ For Pokémons list we use APi url: https://pokeapi.co/api/v2/pokemon?limit=12&offset=1 were limit end offset are selecting parameters. By default we select 12 Pokémons.
 
-## Code scaffolding
+![img1](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_1.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
++ Filtering by Pokémons type display only selected type Pokémons for all loaded before.
 
-## Build
+![img2](img/img_2.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Filtered Pokémons.
 
-## Running unit tests
+![img3](img/img_3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
++ To see Pokémon info just click on Pokémon.
 
-## Running end-to-end tests
+![img4](img/img_4.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
++ For load more Pokémons on the page, you can to click the button ***'Load More'***.
 
-## Further help
+![img5](img/img_5.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
++ ***'Top'*** and ***'Down'*** buttons. 
+
+![img6](img/img_6.png)
+
++ This page has a responsive design, so it will be easy to use on your mobile phone or tablet. Detailed info about the Pokémon is after ***'Load More'*** button, use ***'Down'*** button to scroll page to the Pokémon info.
+
+![img7](img/img_7.png)
+![img8](img/img_8.png)
+![img9](img/img_9.png)
+
+## [Demo page](https://olenapauk.github.io/Pokemon_Api/)
