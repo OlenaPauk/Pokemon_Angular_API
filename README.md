@@ -11,28 +11,28 @@ Poke API [link](https://pokeapi.co/docs/v2.html) provides simple API for pokemon
 
 + Filtering by Pokémons type display only selected type Pokémons for all loaded before.
 
-![img2](img/img_2.png)
+![img2](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_2.png)
 
 Filtered Pokémons.
 
-![img3](img/img_3.png)
+![img3](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_3.png)
 
 + To see Pokémon info just click on Pokémon.
 
-![img4](img/img_4.png)
+![img4](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_4.png)
 
 + For load more Pokémons on the page, you can to click the button ***'Load More'***.
 
-![img5](img/img_5.png)
+![img5](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_5.png)
 
 + ***'Top'*** and ***'Down'*** buttons. 
 
-![img6](img/img_6.png)
+![img6](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_6.png)
 
 + This page has a responsive design, so it will be easy to use on your mobile phone or tablet. Detailed info about the Pokémon is after ***'Load More'*** button, use ***'Down'*** button to scroll page to the Pokémon info.
 
-![img7](img/img_7.png)
-![img8](img/img_8.png)
-![img9](img/img_9.png)
+![img7](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_7.png)
+![img8](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_8.png)
+![img9](https://raw.githubusercontent.com/OlenaPauk/Pokemon_Api/master/img/img_9.png)
 
-## [Demo page](https://olenapauk.github.io/Pokemon_Api/)
+## [Demo page](https://olenapauk.github.io/Pokemon_Angular_API/)
